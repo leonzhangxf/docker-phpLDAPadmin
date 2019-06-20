@@ -1,0 +1,10 @@
+version: '2'
+services:
+  ldapadmin:
+    image: osixia/phpldapadmin:latest
+    container_name: testldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH:[{'ldap.itcast.cn':[{'server':[{'tls':false},{'host':'localhost'},{'port':389}]}]}]"
+      PHPLDAPADMIN_HTTPS: "false"
+    ports:
+      - "10000:80"
